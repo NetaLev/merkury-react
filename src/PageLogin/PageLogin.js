@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import { database, auth } from './firebase';
+import './PageLogin.css';
+import { database, auth } from './../firebase';
 import SignIn from './SignIn';
-import './App.css';
 
-class App extends Component {
+class LoginPage extends Component {
 
   constructor(props) {
     super(props);
@@ -23,7 +23,7 @@ componentDidMount() {
   });
 }
 
-  render() {
+render() {
     return (
       <div className="App">
         <header className="App-header">
@@ -39,4 +39,4 @@ componentDidMount() {
   }
 }
 
-export default App;
+export default LoginPage;
