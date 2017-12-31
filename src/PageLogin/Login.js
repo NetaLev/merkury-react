@@ -4,7 +4,7 @@ import './PageLogin.css';
 import { database, auth } from './../firebase';
 import SignIn from './SignIn';
 
-class LoginPage extends Component {
+class Login extends Component {
 
   constructor(props) {
     super(props);
@@ -39,4 +39,4 @@ render() {
   }
 }
 
-export default LoginPage;
+export default Login;
