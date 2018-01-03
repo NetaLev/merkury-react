@@ -18,16 +18,16 @@ class App extends Component {
   }
 
   render() {
-    const {currentUser} = this.state;
+     const {currentUser} = this.state;
 
     return (
       <div>
-        <Switch>
+        {/* <Switch> */}
            <PrivateRoute exact={true} path="/" component={Home} currentuser={currentUser}/>
            <Route path="/login" component={Login}/>
            <PrivateRoute path="/category" component={Category} currentuser={currentUser}/>
            <PrivateRoute path="/products" component={Products} currentuser={currentUser}/>
-        </Switch>
+        {/* </Switch> */}
       </div>
     );
   }
