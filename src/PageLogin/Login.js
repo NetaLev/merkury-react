@@ -1,39 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './PageLogin.css';
-import { database, auth } from './../firebase';
-import SignIn from './SignIn';
+import { auth, googleAuthProvider } from './../firebase';
 
 class Login extends Component {
+  state = { error: '' };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentUser: null
-    };
+  onLogin() {
+    this.props.history.push("/");
+    console.log('pushed');
+    alert('pushed');
+    this.setState({ error: 'pushed' });
   }
 
-componentDidMount() {
-  /*database.ref().on('value', () => {
-    console.log('the data changed');
-  });*/
-  auth.onAuthStateChanged((currentUser) => {
-    console.log('AUTH_CHANGE', currentUser);
-    this.setState({currentUser});
-  });
-}
+  login() {
+    auth.signInWithRedirect(googleAuthProvider)
+      .then(res => {
+        console.log('on login');
+        alert('login');
+        this.setState({ error: 'on login' });
+        this.onLogin();
+      })
+      .catch(error => {
+        console.log('error');
+        alert('login error');
+          this.setState({ error: 'Error logging in.' });
+      });
+  }
 
-render() {
+  render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <SignIn />
+      <div className="Login">
+        <button onClick={() => this.login()}>Enter</button>
       </div>
     );
   }
