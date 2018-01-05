@@ -1,0 +1,7 @@
+Ir {code: "auth/popup-closed-by-user", message: "The popup has been closed by the user before finalizing the operation."}
+code
+:
+"auth/popup-closed-by-user"
+message
+:
+"The popup has been closed by the user before finalizing the operation."

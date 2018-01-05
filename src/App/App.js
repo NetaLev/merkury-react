@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import PrivateRoute from './PrivateRoute';
+import { Route,  withRouter } from 'react-router-dom';
 import Category from './../PageCategory/Category';
 import Products from './../PageProducts/Products';
 import Home from './../PageHome/Home';
@@ -13,7 +12,14 @@ class App extends Component {
 
   componentDidMount() {
     auth.onAuthStateChanged((currentUser) => {
-      this.setState({ currentUser });
+      console.log('onAuthStateChanged', currentUser);
+      if (currentUser) {
+        this.setState({ currentUser });
+      }
+      else {
+        console.log('onAuthStateChanged go to login');
+        this.props.history.push('/login');
+      }
     });
   }
 
@@ -21,15 +27,14 @@ class App extends Component {
      const {currentUser} = this.state;
 
     return (
-      <div>
-        {/* <Switch> */}
-           <PrivateRoute exact={true} path="/" component={Home} currentuser={currentUser}/>
+      // TODO: check what is the recommended convention to name id/class of components
+      <div id="App">
+           <Route exact={true} path="/" component={Home}/>
            <Route path="/login" component={Login}/>
-           <PrivateRoute path="/category" component={Category} currentuser={currentUser}/>
-           <PrivateRoute path="/products" component={Products} currentuser={currentUser}/>
-        {/* </Switch> */}
+           <Route path="/category" component={Category}/>
+           <Route path="/products" component={Products}/>
       </div>
     );
   }
 }
-export default App;
+export default withRouter(App);

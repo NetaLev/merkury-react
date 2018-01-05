@@ -5,32 +5,39 @@ import { auth, googleAuthProvider } from './../firebase';
 class Login extends Component {
   state = { error: '' };
 
-  onLogin() {
+  onLogin = () => {
+    console.log('on login');
     this.props.history.push("/");
-    console.log('pushed');
-    alert('pushed');
-    this.setState({ error: 'pushed' });
   }
 
-  login() {
-    auth.signInWithRedirect(googleAuthProvider)
+  handleLogin = () => {
+    auth.signInWithPopup(googleAuthProvider)
       .then(res => {
-        console.log('on login');
-        alert('login');
-        this.setState({ error: 'on login' });
+        console.log('handleLogin callback success', res);
         this.onLogin();
-      })
-      .catch(error => {
-        console.log('error');
-        alert('login error');
-          this.setState({ error: 'Error logging in.' });
       });
+      /* FIREBASE SDK BUG: error "auth/popup-closed-by-user" happens when using chrome incognito and signing in with popup for the first time.
+      signin again solves this issue. checked- and this is a known bug in firebase SDK, and not a bug in my code.
+       .catch(error => {
+         console.log('Error logging in.', error);
+           this.setState({ error: 'Error logging in.' });
+       }); */
   }
+
+  handleLogout = () => {
+    auth.signOut().then(function() {
+      // Sign-out successful.
+    }).catch(function(error) {
+      console.log('Error logging out.', error);
+      this.setState({ error: 'Error logging out.' });
+    });
+  };
 
   render() {
     return (
-      <div className="Login">
-        <button onClick={() => this.login()}>Enter</button>
+      <div id="Login">
+        <button onClick={this.handleLogin}>Enter</button>
+        <button onClick={this.handleLogout}>Logout</button>
       </div>
     );
   }
