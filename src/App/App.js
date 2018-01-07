@@ -5,6 +5,7 @@ import Products from './../PageProducts/Products';
 import Home from './../PageHome/Home';
 import { auth } from './../firebase';
 import Login from './../PageLogin/Login';
+import Test from './../PageTest/Test';
 
 class App extends Component {
 
@@ -30,7 +31,8 @@ class App extends Component {
       // TODO: check what is the recommended convention to name id/class of components
       <div id="App">
            <Route exact={true} path="/" component={Home}/>
-           <Route path="/login" component={Login}/>
+           {/* <Route path="/login" component={Login}/> */}
+           <Route path="/login" component={Test}/>
            <Route path="/category" component={Category}/>
            <Route path="/products" component={Products}/>
       </div>

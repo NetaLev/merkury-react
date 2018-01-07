@@ -26,7 +26,6 @@ class Login extends Component {
 
   handleLogout = () => {
     auth.signOut().then(function() {
-      // Sign-out successful.
     }).catch(function(error) {
       console.log('Error logging out.', error);
       this.setState({ error: 'Error logging out.' });
