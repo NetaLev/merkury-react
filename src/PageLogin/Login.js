@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './PageLogin.css';
+import './PageLogin.scss';
 import { auth, googleAuthProvider } from './../firebase';
 
 class Login extends Component {
