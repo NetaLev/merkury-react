@@ -5,7 +5,7 @@ import Products from './../PageProducts/Products';
 import Home from './../PageHome/Home';
 import { auth } from './../firebase';
 import Login from './../PageLogin/Login';
-import Test from './../PageTest/Test';
+import Test from './../PageTest/Test.1';
 
 class App extends Component {
 

@@ -1,0 +1,6 @@
+REFACTOR
+=========
+1.  package.json: add semantic gulp build on building/starting command
+2.  change git.ignore line /src/**/*.css
+to a line that ignores all css files in src ==exept for those in folder /semantic==
+3.  solve sass url() issues and other issues (does not center body when importing scss and not css)
