@@ -1,14 +1,16 @@
 import React, {Component} from 'react'; //TODO: check the syntax 
 import { Grid } from 'semantic-ui-react';
-import './CenteredGrid.scss';
+import './CenteredGrid.css';
 
 const WithCenteredPosition = WrappedComponent => class extends Component { //annonymous class
 
+  //TODO: check why naming is not working the way it should
   static displayName = `WithCenteredPosition(${WrappedComponent.displayName || WrappedComponent.name})`; //set class nam for debug
 
   render() {
     return (
-      <Grid {...props}
+      <Grid //{...props}
+      container
         textAlign='center'
         style={{ height: '100%' }}
         verticalAlign='middle'>
@@ -17,13 +19,5 @@ const WithCenteredPosition = WrappedComponent => class extends Component { //ann
     );
   }
 };
-
-// const CenteredGrid = (props) => (
-//   <Grid {...props}
-//     textAlign='center'
-//     style={{ height: '100%' }}
-//     verticalAlign='middle'
-//   />
-// )
 
 export default WithCenteredPosition;

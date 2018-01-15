@@ -4,3 +4,8 @@ REFACTOR
 2.  change git.ignore line /src/**/*.css
 to a line that ignores all css files in src ==exept for those in folder /semantic==
 3.  solve sass url() issues and other issues (does not center body when importing scss and not css)
+4.  check if the serviceWorker is needed
+5.  customGrid - check if needs props
+
+
+A segment is used to create a grouping of related content.

@@ -3,16 +3,16 @@
       You can do same with CSS, the main idea is that all the elements up to the `Grid`
       below must have a height of 100%.
     */
-        body { 
-            background: url(./login-page/login-bg.jpg) no-repeat center center fixed; 
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-          }
-          body > div,
-          body > div > div,
-          body > div > div > div.login-form {
-            height: 100%;
-          }
+        // body { 
+        //     background: url(./login-page/login-bg.jpg) no-repeat center center fixed; 
+        //     -webkit-background-size: cover;
+        //     -moz-background-size: cover;
+        //     -o-background-size: cover;
+        //     background-size: cover;
+        //   }
+        //   body > div,
+        //   body > div > div,
+        //   body > div > div > div.login-form {
+        //     height: 100%;
+        //   }
         
