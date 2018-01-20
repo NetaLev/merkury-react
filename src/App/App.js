@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route,  withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import Category from './../PageCategory/Category';
 import Products from './../PageProducts/Products';
 import Home from './../PageHome/Home';
@@ -9,7 +9,17 @@ import Test from './../PageTest/Test.1';
 
 class App extends Component {
 
-  state = {currentUser: null};
+  //  TODO: refactor: add container seperation. I prefer to seperate the UI logic from the app functionality logic. 
+  //  what is the convention? check open source code (probably the solution is redux...)
+  state = {
+    currentUser: null,
+    sidebarVisible: false
+  };
+
+  // logout = () => {
+  // }
+
+  toggleSidebarVisibility = () => this.setState({ sidebarVisible: !this.state.sidebarVisible });
 
   componentDidMount() {
     auth.onAuthStateChanged((currentUser) => {
@@ -25,17 +35,30 @@ class App extends Component {
   }
 
   render() {
-     const {currentUser} = this.state;
+    const { currentUser, sidebarVisible } = this.state;
+    const toggleSidebarVisibility = this.toggleSidebarVisibility;
+    const pageProps = {sidebarVisible, toggleSidebarVisibility};
 
     return (
       // TODO: check what is the recommended convention to name id/class of components
       <div id="App">
-           <Route exact={true} path="/" component={Home}/>
-           {/* <Route path="/login" component={Login}/> */}
-           <Route path="/login" component={Test}/>
-           <Route path="/category" component={Category}/>
-           <Route path="/products" component={Products}/>
+        <Route exact={true} path="/" render={(props) => (
+          <Home {...props} //adds routing stuff: history, location, match
+             {...pageProps}/>
+        )} />
+
+        {/* <Route path="/login" component={Login}/> */}
+        <Route path="/login" component={Test} />
+        <Route path="/category" component={Category} />
+        <Route path="/products" component={Products} />
+
+        {/* <Route path='/page' render={(props) => (
+          <Page {...props} data={extraProps} />
+        )} /> */}
       </div>
+
+
+
     );
   }
 }

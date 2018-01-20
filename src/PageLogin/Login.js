@@ -36,7 +36,7 @@ class Login extends Component {
     return (
       <div id="Login">
         <button onClick={this.handleLogin}>Enter</button>
-        <button onClick={this.handleLogout}>Logout</button>
+        {/* <button onClick={this.handleLogout}>Logout</button> */}
       </div>
     );
   }

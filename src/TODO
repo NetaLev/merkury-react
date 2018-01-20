@@ -8,4 +8,17 @@ to a line that ignores all css files in src ==exept for those in folder /semanti
 5.  customGrid - check if needs props
 
 
-A segment is used to create a grouping of related content.
+A =segment= is used to create a grouping of related content.
+A =container= limits content to a maximum width.
+A =grid= is used to harmonize negative space in a layout.
+A card displays site content in a manner similar to a playing card.
+
+
+READ List:
+
+https://medium.com/@justintulk/react-es6-code-style-tips-448093b4d6e9
+https://medium.com/@phongp27/react-syntax-comparison-e476ae541975
+https://engineering.musefind.com/our-best-practices-for-writing-react-components-dec3eb5c3fc8
+https://reactjs.org/docs/jsx-in-depth.html
+https://davidwalsh.name/spread-operator
+https://www.saltycrane.com/blog/2016/03/es6-features-used-react-development/

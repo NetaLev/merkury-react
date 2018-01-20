@@ -19,8 +19,7 @@ const Test = () => (
             style={{ minHeight: '45vh' }}
             textAlign='center'
             stretched
-            verticalAlign='middle'
-          >
+            verticalAlign='middle'>
             <div></div> {/*spacer*/}
             <div>
               <Header as='h2' color='teal'>
@@ -37,7 +36,6 @@ const Test = () => (
           </Grid.Column>
         </Grid>
       </Segment>
-
     </Grid.Column>
   </Grid>
 
