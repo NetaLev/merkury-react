@@ -1,51 +1,42 @@
 import React, { Component } from 'react'
-import { Icon, Container, Divider, Dropdown, Header, Image, List, Menu, Segment, Button } from 'semantic-ui-react';
+import { Label, Icon, Container, Divider, Dropdown, Header, Image, List, Menu, Segment, Button } from 'semantic-ui-react';
 import ToggleSidebarMenuItem from '../ToggleSidebarMenuItem/ToggleSidebarMenuItem';
+import UserMenuItem from '../UserMenuItem/UserMenuItem';
 import { auth, googleAuthProvider } from '../../firebase';
 
 class HeaderMain extends Component {
 
-  onLogout = () => {
-    console.log('on logout');
-    this.props.history.push("/login"); //is this necessry?
-  }
-
   handleLogout = () => {
-    auth.signOut().then(function() {
-    }).catch(function(error) {
+    auth.signOut().then(function () {
+    }).catch(function (error) {
       console.log('Error logging out.', error);
       this.setState({ error: 'Error logging out.' });
     });
   };
 
   render() {
-    const { sidebarVisible, toggleSidebarVisibility } = this.props;
+    const { currentUserPhoto, sidebarVisible, toggleSidebarVisibility } = this.props;
     const toggleSidebarMenuItemProps = { sidebarVisible, toggleSidebarVisibility };
+    const userMenuItemProps = { currentUserPhoto };
     return (
-      <Menu fixed='top'>
-        <ToggleSidebarMenuItem {...toggleSidebarMenuItemProps}>
-        </ToggleSidebarMenuItem>
-        <Menu.Item as='a'>Home</Menu.Item>
-        <Dropdown item simple text='Dropdown'>
-          <Dropdown.Menu>
-            <Dropdown.Item>List Item</Dropdown.Item>
-            <Dropdown.Item>List Item</Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Header>Header Item</Dropdown.Header>
-            <Dropdown.Item>
-              <i className='dropdown icon' />
-              <span className='text'>Submenu</span>
-              <Dropdown.Menu>
-                <Dropdown.Item>List Item</Dropdown.Item>
-                <Dropdown.Item>List Item</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown.Item>
-            <Dropdown.Item>List Item</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+      <Menu fixed='top' borderless>
+        <ToggleSidebarMenuItem {...toggleSidebarMenuItemProps} />
+        <Menu.Item as='a'> {/*header*/}
+          <Icon name='search' size='large' />
+        </Menu.Item>
+
         <Menu.Menu position='right'>
+          <Menu.Item as='a'>
+            <Icon name='bell' size='large'>
+              <Label attached='top right' circular color='teal'>22</Label>
+            </Icon>
+          </Menu.Item>
+          <Menu.Item as='a'>
+            <Icon name='mail' size='large' />
+          </Menu.Item>
+          <UserMenuItem {...userMenuItemProps} />
           <Menu.Item className='item'>
-            <Button as='a'>Log out</Button>
+            <Button as='a' >Add Project</Button>
           </Menu.Item>
         </Menu.Menu>
       </Menu>

@@ -8,8 +8,14 @@ class Home extends Component {
 
   render() {
     //console.log(this.props);
-    const { sidebarVisible, toggleSidebarVisibility } = this.props;
-    const headerMainProps = { sidebarVisible, toggleSidebarVisibility };
+
+    const { currentUserPhoto, sidebarVisible, toggleSidebarVisibility } = this.props;
+    //currentUser[photoURL]
+    //if (currentUsePhoto!= null) {
+      //console.log(currentUserPhoto);
+    //}
+    
+    const headerMainProps = { currentUserPhoto, sidebarVisible, toggleSidebarVisibility };
     const sidebarMenuProps = {sidebarVisible};
 
     return (

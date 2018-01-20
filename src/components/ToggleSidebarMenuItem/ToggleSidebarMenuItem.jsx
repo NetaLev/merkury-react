@@ -8,7 +8,7 @@ class ToggleSidebarMenuItem extends Component {
     const { sidebarVisible, toggleSidebarVisibility } = this.props;
     const triangleIconClasses = sidebarVisible === true ? 'toggleSidebarMenuItem__triangleIcon--toggled' : '';
     return (
-        <Menu.Item header as='a' onClick={toggleSidebarVisibility}>
+        <Menu.Item as='a' onClick={toggleSidebarVisibility}>
           <Icon fitted name='triangle right' size='large' className={triangleIconClasses} />
           <Icon name='sidebar' size='big' />
         </Menu.Item>
