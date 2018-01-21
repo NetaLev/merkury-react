@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Container, Divider, Grid, Header, Image, List, Segment } from 'semantic-ui-react';
-import './Home.css';
+import './Workflow.css';
 import HeaderMain from '../components/HeaderMain/HeaderMain';
 import SidebarMenu from '../components/SidebarMenu/SidebarMenu';
 
-class Home extends Component {
+class Workflow extends Component {
 
   render() {
     const { currentUserPhoto, sidebarVisible, toggleSidebarVisibility } = this.props;
@@ -15,16 +15,13 @@ class Home extends Component {
       <SidebarMenu {...sidebarMenuProps}>
         <HeaderMain {...headerMainProps}/>
         <Container text style={{ marginTop: '7em' }}>
-          <h2>Home</h2>
-          <Header as='h1'>Semantic UI React Fixed Template</Header>
-          <p>This is a basic fixed menu template using fixed size containers.</p>
-          <p>A text container is used for the main container, which is useful for single column layouts.</p>
+          <h2>Workflow</h2>
         </Container>
       </SidebarMenu>
     );
   }
 }
 
-export default Home;
+export default Workflow;
 
 

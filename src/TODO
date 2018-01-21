@@ -5,7 +5,6 @@ REFACTOR
 to a line that ignores all css files in src ==exept for those in folder /semantic==
 3.  solve sass url() issues and other issues (does not center body when importing scss and not css)
 4.  check if the serviceWorker is needed
-5.  customGrid - check if needs props
 
 
 A =segment= is used to create a grouping of related content.
@@ -22,3 +21,16 @@ https://engineering.musefind.com/our-best-practices-for-writing-react-components
 https://reactjs.org/docs/jsx-in-depth.html
 https://davidwalsh.name/spread-operator
 https://www.saltycrane.com/blog/2016/03/es6-features-used-react-development/
+
+HEADER
+1.  custom style
+2.  custom button with icon
+3.  custom badge on icon / menuItem
+4.  seperatrion of ui logic props from app logic props
+
+
+REFACTOR
+
+a. DRY: add menusWrapper for use in pages with sidebar and header
+b. seperate data from jsx, map over data to create jsx (for example in routes)
+c. create userData element for use in all pages

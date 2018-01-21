@@ -15,16 +15,19 @@ class HeaderMain extends Component {
   };
 
   render() {
+    const handleLogout = this.handleLogout;
     const { currentUserPhoto, sidebarVisible, toggleSidebarVisibility } = this.props;
     const toggleSidebarMenuItemProps = { sidebarVisible, toggleSidebarVisibility };
-    const userMenuItemProps = { currentUserPhoto };
+    const userMenuItemProps = { currentUserPhoto, handleLogout };
     return (
+      
       <Menu fixed='top' borderless>
+        {/* <Container> */}
         <ToggleSidebarMenuItem {...toggleSidebarMenuItemProps} />
-        <Menu.Item as='a'> {/*header*/}
+        <Menu.Item as='a'>
           <Icon name='search' size='large' />
         </Menu.Item>
-
+        
         <Menu.Menu position='right'>
           <Menu.Item as='a'>
             <Icon name='bell' size='large'>
@@ -39,6 +42,7 @@ class HeaderMain extends Component {
             <Button as='a' >Add Project</Button>
           </Menu.Item>
         </Menu.Menu>
+        {/* </Container> */}
       </Menu>
     )
   }
