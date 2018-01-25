@@ -15,9 +15,10 @@ class HeaderMain extends Component {
   };
 
   render() {
+    const handleLogout = this.handleLogout;
     const { currentUserPhoto, sidebarVisible, toggleSidebarVisibility } = this.props;
     const toggleSidebarMenuItemProps = { sidebarVisible, toggleSidebarVisibility };
-    const userMenuItemProps = { currentUserPhoto };
+    const userMenuItemProps = { currentUserPhoto, handleLogout };
     return (
       <Menu fixed='top' borderless>
         <ToggleSidebarMenuItem {...toggleSidebarMenuItemProps} />

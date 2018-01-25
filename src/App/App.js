@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Route, withRouter } from 'react-router-dom';
-import Category from './../PageCategory/Category';
-import Products from './../PageProducts/Products';
-import Home from './../PageHome/Home';
 import { auth } from './../firebase';
+import Home from './../PageHome/Home';
 import Login from './../PageLogin/Login';
+import Statistics from './../PageStatistics/Statistics';
+import Workflow from './../PageWorkflow/Workflow';
 
 class App extends Component {
 
@@ -13,7 +13,7 @@ class App extends Component {
   state = {
     currentUser: null,
     currentUserPhoto: '',
-    sidebarVisible: false
+    sidebarVisible: true
   };
 
   toggleSidebarVisibility = () => this.setState({ sidebarVisible: !this.state.sidebarVisible });
@@ -34,18 +34,24 @@ class App extends Component {
   render() {
     const { currentUser, currentUserPhoto, sidebarVisible } = this.state;
     const toggleSidebarVisibility = this.toggleSidebarVisibility;
-    const pageProps = { currentUserPhoto, sidebarVisible, toggleSidebarVisibility};
+    const pageProps = { sidebarVisible, toggleSidebarVisibility, currentUserPhoto};
 
     return (
       // TODO: check what is the recommended convention to name id/class of components
       <div id="App">
+        <Route path="/login" component={Login} />
         <Route exact={true} path="/" render={(props) => (
-          <Home {...props} //adds routing stuff: history, location, match
+          <Home {...props} //INFO: adds routing stuff: history, location, match
              {...pageProps}/>
         )} />
-        <Route path="/login" component={Login} />
-        <Route path="/category" component={Category} />
-        <Route path="/products" component={Products} />
+        <Route exact={true} path="/statistics" render={(props) => (
+          <Statistics {...props}
+             {...pageProps}/>
+        )} />
+        <Route exact={true} path="/workflow" render={(props) => (
+          <Workflow {...props} 
+             {...pageProps}/>
+        )} />
       </div>
     );
   }
