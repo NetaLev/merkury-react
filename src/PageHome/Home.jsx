@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Container, Divider, Grid, Header, Image, List, Segment } from 'semantic-ui-react';
+import { Container, Divider, Grid, Header, Image, List, Segment, Card } from 'semantic-ui-react';
 import './Home.css';
 import HeaderMain from '../components/HeaderMain/HeaderMain';
 import SidebarMenu from '../components/SidebarMenu/SidebarMenu';
+import ChartCard from '../components/ChartCard/ChartCard';
 
 class Home extends Component {
 
@@ -10,19 +11,56 @@ class Home extends Component {
 
     const { currentUserPhoto, sidebarVisible, toggleSidebarVisibility } = this.props;
     const headerMainProps = { currentUserPhoto, sidebarVisible, toggleSidebarVisibility };
-    const sidebarMenuProps = {sidebarVisible, activeItem: this.constructor.name};
+    const sidebarMenuProps = { sidebarVisible, activeItem: this.constructor.name };
 
     return (
       <SidebarMenu {...sidebarMenuProps}>
-        <HeaderMain {...headerMainProps}/>
-        {/* TODO: container fix: always position children to center */}
-        <Container text style={{ marginTop: '7em' }}>
-          <h2>Home</h2>
-          <Header as='h1'>Semantic UI React Fixed Template</Header>
-          <p>This is a basic fixed menu template using fixed size containers.</p>
-          <p>A text container is used for the main container, which is useful for single column layouts.</p>
+        <HeaderMain {...headerMainProps} />
+        <Header as='h2' attached='top' style={{ paddingTop: '55px' }}>
+          Header
+        </Header>
+        <Segment attached='bottom' style={{ height: '100%' }}>
+          <Grid celled columns='equal' style={{ height: '100%' }}>
+            <Grid.Row >
+              <Grid.Column>
+                <ChartCard />
+              </Grid.Column>
+              <Grid.Column>
+                <Card fluid
+                  header='Elliot Baker'
+                  meta='Friend'
+                  description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.'
+                />
+              </Grid.Column>
+            </Grid.Row>
 
-        </Container>
+            <Grid.Row >
+              <Grid.Column>
+                <Card fluid
+                  header='Elliot Baker'
+                  meta='Friend'
+                  description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.'
+                />
+              </Grid.Column>
+              <Grid.Column>
+                <Card fluid
+                  header='Elliot Baker'
+                  meta='Friend'
+                  description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.'
+                />
+              </Grid.Column>
+              <Grid.Column>
+                <Card fluid
+                  href='#card-example-link-card'
+                  header='Elliot Baker'
+                  meta='Friend'
+                  description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.'
+                />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>
+
       </SidebarMenu>
     );
   }

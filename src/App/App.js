@@ -7,6 +7,7 @@ import Statistics from './../PageStatistics/Statistics';
 import Workflow from './../PageWorkflow/Workflow';
 
 class App extends Component {
+  //TODO: refactor: create a ont time data object that includes all pages data (names and paths) and use data from there in all apps routing and page handling.
 
   //  TODO: refactor: add container seperation. I prefer to seperate the UI logic from the app functionality logic. 
   //  what is the convention? check open source code (probably the solution is redux...)
