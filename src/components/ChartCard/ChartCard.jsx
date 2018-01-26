@@ -1,25 +1,32 @@
 import React, { Component } from 'react'
 import { Button, Card, Image, Select, Grid } from 'semantic-ui-react';
 import './ChartCard.css';
+import SalesPieChart from '../SalesPieChart/SalesPieChart';
+// TODO: refactor: rename for something like 'SelectionCard'
 
 class ChartCard extends Component {
-
   render() {
-    //const { handleLogout,currentUserPhoto } = this.props;
-    //const triangleIconClasses = sidebarVisible === true ? 'toggleSidebarMenuItem__triangleIcon--toggled' : '';
+    const options = [
+      { key: 1, text: 'Choice 1', value: 1 },
+      { key: 2, text: 'Choice 2', value: 2 },
+      { key: 3, text: 'Choice 3', value: 3 },
+    ]
+    const { title } = this.props;
+
     return (
-      <Card fluid>
-        <Card.Content>
+      <Card fluid  style={{ height: '100%' }}>
+        <Card.Content style={{ height: '100%' }}>
           <Card.Header>
             <Grid columns='equal'>
               <Grid.Column>
-                Header
+                {title}
               </Grid.Column>
-              <Grid.Column>
-                <Select placeholder='Select your country' />
+              <Grid.Column floated='right'>
+                <Select placeholder='Select' options={options} compact style={{ float: 'right' }} />
               </Grid.Column>
             </Grid>
           </Card.Header>
+          {this.props.children}
         </Card.Content>
       </Card>
     )
@@ -27,20 +34,3 @@ class ChartCard extends Component {
 }
 
 export default ChartCard
-
-{/* <Menu borderless>
-<Menu.Item >
-  Your Sales
-  </Menu.Item>
-<Menu.Menu position='right'>
-  <Dropdown item text='Categories'>
-    <Dropdown.Menu>
-      <Dropdown.Item>Electronics</Dropdown.Item>
-      <Dropdown.Item>Automotive</Dropdown.Item>
-      <Dropdown.Item>Home</Dropdown.Item>
-    </Dropdown.Menu>
-  </Dropdown>
-
-</Menu.Menu>
-
-</Menu> */}

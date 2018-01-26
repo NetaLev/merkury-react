@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 class SidebarMenu extends Component {
 
   render() {
-
     const { activeItem, sidebarVisible } = this.props;
     const pusherStyle = sidebarVisible === true ? { width: 'calc(100% - 350px)', height: '100%' } : {height: '100%'};
     return (
@@ -23,9 +22,7 @@ class SidebarMenu extends Component {
         </Sidebar>
         <Sidebar.Pusher style={pusherStyle}>
           {/* TODO: refactor sidebar fix to make it steady, modifiable and reusable using a property to handle the animation override & new responsive pusher width feature */}
-          {/* <Segment basic> */}
           {this.props.children}
-          {/* </Segment> */}
         </Sidebar.Pusher>
       </Sidebar.Pushable>
     )
