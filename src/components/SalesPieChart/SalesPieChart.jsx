@@ -17,10 +17,9 @@ class SalesPieChart extends Component {
     return (
       <ResponsiveContainer width="100%" height="90%">
          <PieChart >
-        <Pie cx='35%'
+        <Pie cx='35%' 
           data={data}
-          innerRadius={40}
-          outerRadius={80}
+          innerRadius={'40%'}
           fill="#8884d8"
         >
           {
