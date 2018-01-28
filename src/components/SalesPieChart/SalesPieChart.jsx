@@ -16,14 +16,17 @@ class SalesPieChart extends Component {
 
     return (
       <ResponsiveContainer width="100%" height="90%">
+        {/* TODO: important play with display according to recharts API until Pie shows well responsively */}
          <PieChart >
-        <Pie cx='35%' 
+        <Pie dataKey='value' cx='35%' 
           data={data}
           innerRadius={'40%'}
+          outerRadius={'80%'}
           fill="#8884d8"
         >
+        {/* TODO: change key */}
           {
-            data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]} />)
+            data.map((entry, index) => <Cell key={index} fill={COLORS[index % COLORS.length]} />)
           }
         </Pie>
         <Legend layout='vertical' verticalAlign='middle' wrapperStyle={legendStyle}/>

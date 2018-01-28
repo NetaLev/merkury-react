@@ -8,7 +8,7 @@ class SidebarMenu extends Component {
     const { activeItem, sidebarVisible } = this.props;
     const pusherStyle = sidebarVisible === true ? { width: 'calc(100% - 350px)', height: '100%' } : {height: '100%'};
     return (
-      <Sidebar.Pushable as={Segment}>
+      <Sidebar.Pushable as= {Segment}>
         <Sidebar as={Menu} width='wide' visible={sidebarVisible} vertical inverted>{/*animation='push' */}
           <Link to="/">
             <Menu.Item name='Home' active={activeItem === 'Home'} />
