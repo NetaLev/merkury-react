@@ -17,7 +17,6 @@ class Home extends Component {
     const headerMainProps = { currentUserPhoto, sidebarVisible, toggleSidebarVisibility };
     const sidebarMenuProps = { sidebarVisible, activeItem: this.constructor.name };
 
-
     return (
       <SidebarMenu {...sidebarMenuProps}>
         <HeaderMain {...headerMainProps} />

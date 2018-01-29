@@ -1,0 +1,8 @@
+//TODO: semantic-ui label design is kind of shitty with a lot of !important styling and gliches, which forces me to use !important here (or inline styles... both bad). 
+// therefore - create a new custom circular label styling & component from scratch
+
+.task-feed__task-label {
+    display:flex !important;
+    justify-content: center !important;
+    align-self: center !important;
+}
