@@ -22,7 +22,7 @@ class HeaderMain extends Component {
     return (
       <Menu fixed='top' borderless>
         <ToggleSidebarMenuItem {...toggleSidebarMenuItemProps} />
-        <Menu.Item as='a'> {/*header*/}
+        <Menu.Item as='a'>
           <Icon name='search' size='large' />
         </Menu.Item>
 

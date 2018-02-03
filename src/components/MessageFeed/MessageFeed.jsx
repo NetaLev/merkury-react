@@ -9,7 +9,7 @@ class MessageFeed extends Component {
     const summary = 'You added Jenny Hess to your coworker group.';
 
     return (
-      <Comment.Group size='small'>
+      <Comment.Group size='large'>
         <Comment>
           <Comment.Avatar src='/assets/images/avatar/small/matt.jpg' />
           <Comment.Content>

@@ -28,7 +28,6 @@ class ReportLineChart extends Component {
           <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={4} />
         </LineChart>
       </ResponsiveContainer>
-
     )
   }
 }

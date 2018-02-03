@@ -2,18 +2,17 @@ import React, { Component } from 'react'
 import { Feed, List, Label, Card, Image, Grid } from 'semantic-ui-react';
 import './ListCard.css';
 import CardActionHeader from '../CardActionHeader/CardActionHeader';
-import TaskFeed from '../TaskFeed/TaskFeed';
-import MessageFeed from '../MessageFeed/MessageFeed';
-import ActivityFeed from '../ActivityFeed/ActivityFeed';
+//import ListCardContent from '../ListCardContent/ListCardContent';
+import FeedList from '../FeedList/FeedList';
 // TODO: refactor: rename for something like 'SelectionCard'
 
 class ListCard extends Component {
   render() {
-    const { title } = this.props;
+    const { title, activeCount, data, wrapItem, type } = this.props;
+    const contentProps = {data, type};
 
-    /*  const image = '/assets/images/avatar/small/jenny.jpg';
-      const date = '3 days ago';
-      const summary = 'You added Jenny Hess to your coworker group.';*/
+    //console.log('### list card props ###');
+    //console.log(this.props);
 
     return (
       <Card fluid>
@@ -24,26 +23,17 @@ class ListCard extends Component {
               <List horizontal>
                 <List.Item>
                   <List.Content>
-                    <Label circular color='teal'>2</Label>
-                  </List.Content>
-                </List.Item>
-                <List.Item>
-                  <List.Content>
-                    <Label circular color='teal'>5</Label>
+                    <Label circular color='teal'>{ activeCount }</Label>
                   </List.Content>
                 </List.Item>
               </List>
             } />
         </Card.Content>
-        <Card.Content>
-          <TaskFeed />
-        </Card.Content>
-        <Card.Content>
-          <MessageFeed/>
-        </Card.Content>
-        <Card.Content>
-          <ActivityFeed/>
-        </Card.Content>
+         {/*TODO: use 
+         https://reactjs.org/docs/jsx-in-depth.html#choosing-the-type-at-runtime*/}
+         {/* <Card.Content> */}
+           <FeedList {...contentProps}/>
+        {/* </Card.Content> */}
       </Card>
     )
   }
