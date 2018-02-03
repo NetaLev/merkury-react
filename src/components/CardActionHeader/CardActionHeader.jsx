@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Card, Grid } from 'semantic-ui-react';
-import './CardActionHeader.css';
+import { Card } from 'semantic-ui-react';
 import SplitPane from '../SplitPane/SplitPane';
+import './CardActionHeader.css';
 
 class CardActionHeader extends Component {
   render() {
@@ -17,22 +17,3 @@ class CardActionHeader extends Component {
 }
 
 export default CardActionHeader
-
-// <Grid columns='equal'>
-//           <Grid.Column>
-//             {title}
-//           </Grid.Column>
-//           <Grid.Column className='card-action-header__actions'>
-//             {this.props.children}
-//           </Grid.Column>
-//         </Grid>
-
-// return (
-//   <SplitPane
-//     left={
-//       <Contacts />
-//     }
-//     right={
-//       <Chat />
-//     } />
-// );

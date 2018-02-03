@@ -1,23 +1,21 @@
 import React, { Component } from 'react'
 import { Comment, Icon } from 'semantic-ui-react';
 import './MessageFeed.css';
-//import CardActionHeader from '../CardActionHeader/CardActionHeader';
-//TODO: add alias, something like Feed.Task
+
 class MessageFeed extends Component {
   render() {
-    const date = '3 days ago';
-    const summary = 'You added Jenny Hess to your coworker group.';
+    const { date, message, sender } = this.props;
 
     return (
-      <Comment.Group size='large'>
+      <Comment.Group>
         <Comment>
-          <Comment.Avatar src='/assets/images/avatar/small/matt.jpg' />
+          <Comment.Avatar src={sender.avatar} />
           <Comment.Content>
-            <Comment.Author as='a'>Matt</Comment.Author>
+            <Comment.Author as='a'>{sender.name}</Comment.Author>
             <Comment.Metadata>
               <div>{date}</div>
             </Comment.Metadata>
-            <Comment.Text> {summary}</Comment.Text>
+            <Comment.Text> {message}</Comment.Text>
             <Comment.Actions>
               <Comment.Action>
                 <Icon name='reply' />

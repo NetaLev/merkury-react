@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Select, Button, Card, Image, Grid } from 'semantic-ui-react';
-import './ChartCard.css';
+import { Select, Card } from 'semantic-ui-react';
 import CardActionHeader from '../CardActionHeader/CardActionHeader';
+import './ChartCard.css';
 // TODO: refactor: rename for something like 'SelectionCard'
 
 class ChartCard extends Component {

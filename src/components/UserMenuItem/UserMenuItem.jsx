@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Dropdown, Icon, Menu, Image } from 'semantic-ui-react';
+import { Dropdown, Image } from 'semantic-ui-react';
 import './UserMenuItem.css';
 
 class UserMenuItem extends Component {
@@ -16,8 +16,6 @@ class UserMenuItem extends Component {
       <Dropdown item as='a' trigger={trigger} icon='triangle down' >
         <Dropdown.Menu>
             <Dropdown.Item onClick={handleLogout}>Log out</Dropdown.Item>
-            <Dropdown.Item>Medium</Dropdown.Item>
-            <Dropdown.Item>Large</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
     )

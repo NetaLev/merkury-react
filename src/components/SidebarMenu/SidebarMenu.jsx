@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { Sidebar, Segment, Button, Menu, Image, Icon, Header } from 'semantic-ui-react'
+import { Sidebar, Segment, Menu } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 
 class SidebarMenu extends Component {
+
+  /* TODO: refactor sidebar fix hardcoded stuff. make a steady, modifiable and reusable code using a property to handle the animation override & new responsive pusher width feature */
 
   render() {
     const { activeItem, sidebarVisible } = this.props;
@@ -21,7 +23,7 @@ class SidebarMenu extends Component {
           </Link>
         </Sidebar>
         <Sidebar.Pusher style={pusherStyle}>
-          {/* TODO: refactor sidebar fix to make it steady, modifiable and reusable using a property to handle the animation override & new responsive pusher width feature */}
+          
           {this.props.children}
         </Sidebar.Pusher>
       </Sidebar.Pushable>

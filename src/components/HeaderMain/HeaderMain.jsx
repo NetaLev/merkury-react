@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { Label, Icon, Container, Divider, Dropdown, Header, Image, List, Menu, Segment, Button } from 'semantic-ui-react';
+import { Label, Icon, Menu, Button } from 'semantic-ui-react';
 import ToggleSidebarMenuItem from '../ToggleSidebarMenuItem/ToggleSidebarMenuItem';
 import UserMenuItem from '../UserMenuItem/UserMenuItem';
-import { auth, googleAuthProvider } from '../../firebase';
+import { auth } from '../../firebase';
 
 class HeaderMain extends Component {
 

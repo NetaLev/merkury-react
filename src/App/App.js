@@ -9,11 +9,17 @@ import Workflow from './../PageWorkflow/Workflow';
 
 class App extends Component {
 
-  //TODO: refactor: create a one time data object that includes all pages data (names and paths) and use data from there in all apps routing and page handling.
+  // TODO: give better names to all components
+
   //  TODO: refactor: I prefer to seperate the UI logic from the app buisness logic. 
   //  what is the convention? check open source code (probably the solution is redux...)
   //  update: the solution is indeed redux/mobx: save  buisness data in stores and keep the UI states in the state object.
   //  after learning flux & mobx/redux - implement stores to enforce this seperation
+
+  // TODO: refactor: create a one time data object that includes all pages data (names and paths) and use data from there in all apps routing and page handling.
+
+  // TODO: move variables from reder to the class if and when needed
+
   state = {
     currentUser: null,
     currentUserPhoto: '',
@@ -26,7 +32,6 @@ class App extends Component {
   componentDidMount() {
 
     auth.onAuthStateChanged((currentUser) => {
-      //console.log('onAuthStateChanged', currentUser);
       if (currentUser) {
         this.setState({
           currentUser,
@@ -35,7 +40,6 @@ class App extends Component {
         });
       }
       else {
-        //console.log('onAuthStateChanged go to login');
         this.props.history.push('/login');
       }
     });
@@ -44,17 +48,12 @@ class App extends Component {
   render() {
     const { fakeData } = this.props;
     const pageHomeData = fakeData;
-    const { currentUser, currentUserPhoto, currentUserName, sidebarVisible } = this.state;
+    const { currentUserPhoto, currentUserName, sidebarVisible } = this.state;
     const toggleSidebarVisibility = this.toggleSidebarVisibility;
     const pageProps = { sidebarVisible, toggleSidebarVisibility, currentUserPhoto };
     const pageHomeProps = { currentUserName, pageHomeData };
 
-    //console.log('APP DATA');
-    //console.log(pageHomeProps);
-    //console.log(fakeData);
-
     return (
-      // TODO: check what is the recommended convention to name id/class of components
       <div id="App">
         <Route exact={true} path="/" render={(props) => (
           <Home {...props}

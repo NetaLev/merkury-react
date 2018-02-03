@@ -1,20 +1,26 @@
 REFACTOR
 =========
+
+SETUP:
 1.  package.json: add semantic gulp build on building/starting command
-2.  change git.ignore line /src/**/*.css
-to a line that ignores all css files in src ==exept for those in folder /semantic==
+2.  change git.ignore line /src/**/*.css to a line that ignores all css files in src ==except for those in folder /semantic==
 3.  solve sass url() issues and other issues (does not center body when importing scss and not css)
 4.  check if the serviceWorker is needed
-5.  customGrid - check if needs props
+5.  install css modules (will be built in in future create-react-app versions)
+6.  use css autoprefixer to auto-fit css to different browsers
+7.  set linter with style rules
+
+CODE:
 
 
-A =segment= is used to create a grouping of related content.
-A =container= limits content to a maximum width.
-A =grid= is used to harmonize negative space in a layout.
-A card displays site content in a manner similar to a playing card.
+FUTURE development
+==================
+1.  use css modules
+2.  replace fake data with real one from firebase
+3.  use mobx / redux to orginize data and to seperate data flow from ui logic
 
-
-READ List:
+==========
+Saved Read List:
 
 https://medium.com/@justintulk/react-es6-code-style-tips-448093b4d6e9
 https://medium.com/@phongp27/react-syntax-comparison-e476ae541975

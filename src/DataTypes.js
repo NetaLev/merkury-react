@@ -13,6 +13,6 @@ export const activitySubjectType = {
  */
 export const activityActionType = {
   ADD: 'added a new ',
-  COMMENT: 'commented on ',
+  COMMENT: 'commented on a ',
   COMPLETE: 'completed '
 };

@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import faker from 'faker'
-import { activitySubjectType, activityActionType } from './DataTypes';
+import { activitySubjectType, activityActionType } from './dataTypes';
 
 const getRandomDate = (suffix) => {
     return faker.random.arrayElement(

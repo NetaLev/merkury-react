@@ -1,18 +1,14 @@
 import React, { Component } from 'react'
 import { Feed, Comment, Icon } from 'semantic-ui-react';
 import './ActivityFeed.css';
-//import CardActionHeader from '../CardActionHeader/CardActionHeader';
+
 //TODO: add alias, something like Feed.Task
 class ActivityFeed extends Component {
   render() {
     const { action, date, subject, user } = this.props;
-console.log('USER');
-console.log(user);
-
-    const summary = 'You added Jenny Hess to your coworker group.';
-    const labelLetter = summary.charAt(0).toUpperCase();
 
     return (
+      <Comment.Group>
         <Comment>
           <Comment.Avatar src={user.avatar} />
           <Comment.Content>
@@ -32,6 +28,7 @@ console.log(user);
             </Feed>
           </Comment.Content>
         </Comment>
+      </Comment.Group>
     )
   }
 }

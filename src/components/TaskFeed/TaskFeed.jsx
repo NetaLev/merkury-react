@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
 import { Feed, Label, Icon } from 'semantic-ui-react';
 import './TaskFeed.css';
-//import CardActionHeader from '../CardActionHeader/CardActionHeader';
-//TODO: add alias, something like Feed.Task
-class TaskFeed extends Component {
+
+class TaskFeed extends Component { //TODO: add alias, something like Feed.Task
   render() {
-    const { title } = this.props;
-    const date = '3 days ago';
-    const summary = 'You added Jenny Hess to your coworker group.';
-    const labelLetter = summary.charAt(0).toUpperCase();
+    const { date, title } = this.props;
+    const labelLetter = title.charAt(0).toUpperCase();
 
     return (
       <Feed>
@@ -17,7 +14,7 @@ class TaskFeed extends Component {
             <Label circular color='teal' size='large'>{labelLetter}</Label>
           </Feed.Label>
           <Feed.Content>
-            <Feed.Summary content={summary} />
+            <Feed.Summary content={title} />
 
             <Feed.Extra>
               <Feed.Date>

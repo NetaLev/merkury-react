@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Divider, Grid, Header, Image, List, Segment } from 'semantic-ui-react';
+import { Container, Header } from 'semantic-ui-react';
 import './Workflow.css';
 import HeaderMain from '../components/HeaderMain/HeaderMain';
 import SidebarMenu from '../components/SidebarMenu/SidebarMenu';

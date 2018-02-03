@@ -1,19 +1,15 @@
 import React, { Component } from 'react'
-import { Feed, List, Label, Card, Image, Grid } from 'semantic-ui-react';
-import './ListCard.css';
+import { List, Label, Card } from 'semantic-ui-react';
 import CardActionHeader from '../CardActionHeader/CardActionHeader';
-//import ListCardContent from '../ListCardContent/ListCardContent';
 import FeedList from '../FeedList/FeedList';
-// TODO: refactor: rename for something like 'SelectionCard'
+import './ListCard.css';
 
 class ListCard extends Component {
   render() {
-    const { title, activeCount, data, wrapItem, type } = this.props;
-    const contentProps = {data, type};
-
-    //console.log('### list card props ###');
-    //console.log(this.props);
-
+    const { title, activeCount, data, type } = this.props;
+    const wrapper = Card.Content;
+    const contentProps = { data, type, wrapper };
+    
     return (
       <Card fluid>
         <Card.Content>
@@ -23,17 +19,13 @@ class ListCard extends Component {
               <List horizontal>
                 <List.Item>
                   <List.Content>
-                    <Label circular color='teal'>{ activeCount }</Label>
+                    <Label circular color='teal'>{activeCount}</Label>
                   </List.Content>
                 </List.Item>
               </List>
             } />
         </Card.Content>
-         {/*TODO: use 
-         https://reactjs.org/docs/jsx-in-depth.html#choosing-the-type-at-runtime*/}
-         {/* <Card.Content> */}
-           <FeedList {...contentProps}/>
-        {/* </Card.Content> */}
+        <FeedList {...contentProps} />
       </Card>
     )
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './PageLogin.css';
-import { Menu, Button, Form, Grid, Header, Image, Message, Segment, Container } from 'semantic-ui-react';
+import { Menu, Button, Form, Grid, Header, Segment } from 'semantic-ui-react';
 import { auth, googleAuthProvider } from './../firebase';
+import './PageLogin.css';
 
 class Login extends Component {
   state = { error: '' };
@@ -17,7 +17,7 @@ class Login extends Component {
         console.log('handleLogin callback success', res);
         this.onLogin();
       });
-    /* FIREBASE SDK BUG: error "auth/popup-closed-by-user" happens when using chrome incognito and signing in with popup for the first time.
+    /* TODO: FIX BUG DERIVED FROM FIREBASE SDK BUG: error "auth/popup-closed-by-user" happens when using chrome incognito and signing in with popup for the first time.
     signin again solves this issue. checked- and this is a known bug in firebase SDK, and not a bug in my code.
      .catch(error => {
        console.log('Error logging in.', error);
@@ -27,35 +27,46 @@ class Login extends Component {
 
   render() {
     return (
-      <Grid centered
+      <Grid
+        className="page-login__outer-grid"
+        centered
         container
         textAlign='center'
-        style={{ height: '100%' }}
         verticalAlign='middle'
       >
         <Grid.Column>
           <Menu attached="top">
             <Menu.Item name='home' />
           </Menu>
-          <Segment attached="bottom" padded="very">
+          <Segment
+            attached="bottom"
+            padded="very"
+          >
             <Grid>
               <Grid.Column
-                style={{ minHeight: '45vh' }}
+                className="page-login__content-box"
                 textAlign='center'
                 stretched
-                verticalAlign='middle'>
-                <div></div> {/*spacer*/}
+                verticalAlign='middle'
+              >
+                <div></div> {/*TODO: replace spacer with css*/}
                 <div>
                   <Header as='h2' color='teal'>
                     Welcome back!
-            </Header>
+                  </Header>
                   <Header as='h2' color='teal'>
                     Log-in to your account with Google
-              <Image />
+                  {/* TODO: after adding custom css according to psd, add <Image /> */}
                   </Header>
                 </div>
                 <Form size='large'>
-                  <Button color='teal' size='large' onClick={this.handleLogin}>Enter</Button>
+                  <Button 
+                    color='teal' 
+                    size='large' 
+                    onClick={this.handleLogin}
+                  >
+                    Enter
+                  </Button>
                 </Form>
               </Grid.Column>
             </Grid>
