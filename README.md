@@ -1,7 +1,7 @@
 
 A React dashboard - small coding project I am working on to learn & practice ReactJS.
 
-[A Working Demo:](https://merkury-react.firebaseapp.com/)
+[A Working Demo](https://merkury-react.firebaseapp.com/)
 
 Design is based on [Merkury PSD Dashboard & Landing Page](https://www.behance.net/gallery/33251743/Merkury-PSD-Dashboard-Landing-Page)
 By Jakub Kowalczyk
