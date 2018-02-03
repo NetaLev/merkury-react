@@ -6,11 +6,11 @@ A React dashboard - small coding project I am working on to learn & practice Rea
 Design is based on [Merkury PSD Dashboard & Landing Page](https://www.behance.net/gallery/33251743/Merkury-PSD-Dashboard-Landing-Page)
 By Jakub Kowalczyk
 
-Built with:
-==========
-[create-react-app](https://github.com/facebook/create-react-app)
-[Firebase](https://firebase.google.com/)
-[Semantic-ui-react](https://react.semantic-ui.com/introduction)
+## Built With
+
+- [create-react-app](https://github.com/facebook/create-react-app)
+- [Firebase](https://firebase.google.com/)
+- [Semantic-ui-react](https://react.semantic-ui.com/introduction)
 
 
 ================
