@@ -6,6 +6,19 @@ A React dashboard - small coding project I am working on to learn & practice Rea
 Design is based on [Merkury PSD Dashboard & Landing Page](https://www.behance.net/gallery/33251743/Merkury-PSD-Dashboard-Landing-Page)
 By Jakub Kowalczyk
 
+## Features implemented up to date
+
+- Firebase Login / Logout (inside user dropdown)
+- Pages Routing (with auth)
+- Open/Close Sidebar
+- Fake Faker.js data injection
+
+## Main future developing plans
+
+- Custom Css & Semantic-UI theme
+- Keep improving code quality
+- Mobx/Redux implementation
+
 ## Built With
 
 - [create-react-app](https://github.com/facebook/create-react-app)
