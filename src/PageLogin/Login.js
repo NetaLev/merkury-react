@@ -7,14 +7,12 @@ class Login extends Component {
   state = { error: '' };
 
   onLogin = () => {
-    console.log('on login');
     this.props.history.push("/");
   }
 
   handleLogin = () => {
     auth.signInWithPopup(googleAuthProvider)
       .then(res => {
-        console.log('handleLogin callback success', res);
         this.onLogin();
       });
     /* TODO: FIX BUG DERIVED FROM FIREBASE SDK BUG: error "auth/popup-closed-by-user" happens when using chrome incognito and signing in with popup for the first time.
