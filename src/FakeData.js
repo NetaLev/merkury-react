@@ -11,13 +11,13 @@ const getRandomDate = (suffix) => {
         ]);
 };
 
-const tasks = _.times(3, () => ({
+const tasks = _.times(2, () => ({
     key: faker.random.uuid(),
     title: faker.lorem.sentence(),
     date: getRandomDate('left')
 }));
 
-const messages = _.times(3, () => ({
+const messages = _.times(2, () => ({
     key: faker.random.uuid(),
     sender: {
         name: faker.name.findName(),
@@ -27,7 +27,7 @@ const messages = _.times(3, () => ({
     date: getRandomDate('ago')
 }))
 
-const activities = _.times(4, () => ({
+const activities = _.times(3, () => ({
     key: faker.random.uuid(),
     user: {
         name: faker.name.findName(),
@@ -40,11 +40,31 @@ const activities = _.times(4, () => ({
 
 const sales = {
     data: [
-        { name: 'Websites', value: faker.random.number({ min: 100, max: 500 }) },
-        { name: 'Logo', value: faker.random.number({ min: 100, max: 500 }) },
-        { name: 'Social Media', value: faker.random.number({ min: 100, max: 500 }) },
-        { name: 'Adwords', value: faker.random.number({ min: 100, max: 500 }) },
-        { name: 'E-Commerce', value: faker.random.number({ min: 100, max: 500 }) }
+        {
+            name: 'Websites',
+            value: faker.random.number({ min: 100, max: 500 }),
+            key: faker.random.uuid()
+        },
+        {
+            name: 'Logo',
+            value: faker.random.number({ min: 100, max: 500 }),
+            key: faker.random.uuid()
+        },
+        {
+            name: 'Social Media',
+            value: faker.random.number({ min: 100, max: 500 }),
+            key: faker.random.uuid()
+        },
+        {
+            name: 'Adwords', 
+            value: faker.random.number({ min: 100, max: 500 }),
+            key: faker.random.uuid()
+        },
+        {
+            name: 'E-Commerce', 
+            value: faker.random.number({ min: 100, max: 500 }),
+            key: faker.random.uuid()
+        }
     ]
 }
 

@@ -4,9 +4,8 @@ import './SalesPieChart.css';
 
 class SalesPieChart extends Component {
   render() {
-    const data = [{ name: 'Group A', value: 400 }, { name: 'Group B', value: 300 },
-    { name: 'Group C', value: 300 }, { name: 'Group D', value: 200 }];
-    const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+    const { data } = this.props;
+    const COLORS = ['#0088fe', '#00c49f', '#ffbb28', '#ff8042', '#da4f4f']; // TODO: when styling, use theme color variables instead of hardcoded colors
     //const RADIAN = Math.PI / 180;
     const legendStyle = {
       left: '65%'
@@ -14,16 +13,19 @@ class SalesPieChart extends Component {
 
     return (
       <ResponsiveContainer width="110%" height="90%">
-        {/* TODO: custom outer responsive legend */}
+        {/* TODO: change to custom outer responsive legend */}
         <PieChart >
-          <Pie dataKey='value' cx='35%'
+          <Pie
             data={data}
+            dataKey='value'
+            cx='35%'
             innerRadius={'35%'}
             outerRadius={'75%'}
           >
-            {/* TODO: change key */}
             {
-              data.map((entry, index) => <Cell key={index} fill={COLORS[index % COLORS.length]} />)
+              data.map((entry, index) =>
+                <Cell key={entry.name} fill={COLORS[index % COLORS.length]} />
+              )
             }
           </Pie>
           <Legend layout='vertical' verticalAlign='middle' wrapperStyle={legendStyle} />

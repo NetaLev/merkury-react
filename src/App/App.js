@@ -18,7 +18,7 @@ class App extends Component {
 
   // TODO: refactor: create a one time data object that includes all pages data (names and paths) and use data from there in all apps routing and page handling.
 
-  // TODO: move variables from reder to the class if and when needed
+  // TODO: move variables from render function if and when needed
 
   state = {
     currentUser: null,
